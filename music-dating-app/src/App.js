@@ -36,7 +36,7 @@ function App() {
           <div className="navbar-links">
             <Link to="/" className="nav-link">Home</Link>
             <Link to="/playlists" className="nav-link">Browse Playlists</Link>
-            
+
             {!currentUser && (
               <>
                 <Link to="/signup" className="nav-link">Sign Up</Link>
@@ -46,8 +46,8 @@ function App() {
             {currentUser && (
               <>
                 <Link to="/share-playlist" className="nav-link">Share Playlist</Link>
-                <button 
-                  onClick={handleLogout} 
+                <button
+                  onClick={handleLogout}
                   className="btn logout-btn" // Use btn and logout-btn classes
                 >Logout</button>
               </>
@@ -62,23 +62,23 @@ function App() {
         ) : (
           <div className="main-content-area" style={{paddingTop: '20px'}}> {/* Keep padding or manage via CSS */}
             <Routes>
-              <Route 
-                path="/signup" 
-                element={!currentUser ? <SignUpPage /> : <Navigate to="/" />} 
+              <Route
+                path="/signup"
+                element={!currentUser ? <SignUpPage /> : <Navigate to="/" />}
               />
-              <Route 
-                path="/login" 
-                element={!currentUser ? <LoginPage /> : <Navigate to="/" />} 
+              <Route
+                path="/login"
+                element={!currentUser ? <LoginPage /> : <Navigate to="/" />}
               />
-              <Route 
+              <Route
                 path="/share-playlist"
                 element={currentUser ? <SharePlaylistPage /> : <Navigate to="/login" />}
               />
               <Route path="/playlists" element={<AllPlaylistsPage />} />
               <Route path="/playlist/:playlistId" element={<SinglePlaylistPage />} />
-              <Route 
-                path="/" 
-                element={<HomePage />} 
+              <Route
+                path="/"
+                element={<HomePage />}
               />
             </Routes>
           </div>

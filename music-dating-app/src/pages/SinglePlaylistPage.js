@@ -56,14 +56,14 @@ const SinglePlaylistPage = () => {
 
   return (
     // Using page-container for consistent padding and max-width
-    <div className="page-container single-playlist-page"> 
+    <div className="page-container single-playlist-page">
       {/* single-playlist-title class is in App.css for h1 styling */}
-      <h1 className="single-playlist-title">{playlist.title || 'Untitled Playlist'}</h1> 
+      <h1 className="single-playlist-title">{playlist.title || 'Untitled Playlist'}</h1>
       <p className="single-playlist-meta">
         Shared by: {playlist.userDisplayName || 'Anonymous User'}
         {playlist.createdAt && <span> on {playlist.createdAt.toDate().toLocaleDateString()}</span>}
       </p>
-      
+
       {playlist.description && (
         <p className="single-playlist-description">{playlist.description}</p>
       )}
@@ -84,7 +84,7 @@ const SinglePlaylistPage = () => {
 
       <div className="comments-section">
         {/* comments-title class is in App.css for h3 styling */}
-        <h3 className="comments-title">Community Discussion</h3> 
+        <h3 className="comments-title">Community Discussion</h3>
         <CommentList playlistId={playlistId} />
         {currentUser ? (
           <CommentForm playlistId={playlistId} />

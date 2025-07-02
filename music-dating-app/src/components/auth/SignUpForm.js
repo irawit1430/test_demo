@@ -30,20 +30,20 @@ const SignUpForm = () => {
       const user = userCredential.user;
 
       await updateProfile(user, { displayName });
-      
+
       await setDoc(doc(db, "users", user.uid), {
         uid: user.uid,
         displayName: displayName,
         email: user.email,
         createdAt: Timestamp.fromDate(new Date())
       });
-      
+
       setSuccessMessage('Sign up successful! You can now log in.');
       setEmail('');
       setPassword('');
       setDisplayName('');
       // User will be redirected by App.js logic if currentUser state changes and they are on /signup
-      
+
     } catch (error) {
       console.error("Error signing up:", error.code, error.message);
       // More user-friendly error messages
@@ -61,12 +61,12 @@ const SignUpForm = () => {
 
   return (
     // Using form-container for consistent form styling
-    <div className="form-container"> 
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
         <h2>Sign Up</h2> {/* Default h2 styling from App.css */}
         {error && <p className="form-error">{error}</p>}
         {successMessage && <p className="form-success">{successMessage}</p>}
-        
+
         <div>
           <label htmlFor="displayName-signup">Display Name:</label>
           <input
@@ -77,7 +77,7 @@ const SignUpForm = () => {
             required
           />
         </div>
-        
+
         <div>
           <label htmlFor="email-signup">Email:</label>
           <input
@@ -88,7 +88,7 @@ const SignUpForm = () => {
             required
           />
         </div>
-        
+
         <div>
           <label htmlFor="password-signup">Password:</label>
           <input
@@ -100,9 +100,9 @@ const SignUpForm = () => {
             minLength="6"
           />
         </div>
-        
+
         {/* Using btn class for consistent button styling */}
-        <button type="submit" className="btn">Sign Up</button> 
+        <button type="submit" className="btn">Sign Up</button>
       </form>
     </div>
   );

@@ -33,11 +33,11 @@ const LoginForm = () => {
 
   return (
     // Using form-container for consistent form styling
-    <div className="form-container"> 
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
         <h2>Login</h2> {/* Default h2 styling from App.css */}
         {error && <p className="form-error">{error}</p>}
-        
+
         <div>
           <label htmlFor="email-login">Email:</label>
           <input
@@ -48,7 +48,7 @@ const LoginForm = () => {
             required
           />
         </div>
-        
+
         <div>
           <label htmlFor="password-login">Password:</label>
           <input
@@ -59,9 +59,9 @@ const LoginForm = () => {
             required
           />
         </div>
-        
+
         {/* Using btn class for consistent button styling */}
-        <button type="submit" className="btn">Login</button> 
+        <button type="submit" className="btn">Login</button>
       </form>
     </div>
   );

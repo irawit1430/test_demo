@@ -17,7 +17,7 @@ const AllPlaylistsPage = () => {
         const playlistsCollectionRef = collection(db, "playlists");
         const q = query(playlistsCollectionRef, orderBy("createdAt", "desc"));
         const querySnapshot = await getDocs(q);
-        
+
         const playlistsData = querySnapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data()
@@ -50,10 +50,10 @@ const AllPlaylistsPage = () => {
 
   return (
     // Using page-container for consistent padding and max-width
-    <div className="page-container"> 
+    <div className="page-container">
       <h1>Browse All Playlists</h1> {/* Default h1 styling from App.css */}
       {/* Using playlists-grid-container for flex/grid layout from App.css */}
-      <div className="playlists-grid-container"> 
+      <div className="playlists-grid-container">
         {playlists.map(playlist => (
           <PlaylistCard key={playlist.id} playlist={playlist} />
         ))}

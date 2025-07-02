@@ -37,7 +37,7 @@ const CommentForm = ({ playlistId }) => {
       };
 
       await addDoc(collection(db, "comments"), commentObject);
-      setText(''); 
+      setText('');
       // console.log('Comment submitted successfully!');
     } catch (err) {
       console.error("Error submitting comment:", err);
@@ -48,7 +48,7 @@ const CommentForm = ({ playlistId }) => {
   };
 
   if (!currentUser) {
-    // This part is now handled in SinglePlaylistPage.js, 
+    // This part is now handled in SinglePlaylistPage.js,
     // but as a fallback or if used elsewhere:
     return (
       <p style={{ textAlign: 'center', marginTop: '20px' }}>
@@ -60,7 +60,7 @@ const CommentForm = ({ playlistId }) => {
   return (
     // Using form-container for consistent form styling, but applying a variant for comments
     // Or we can use a more specific class if App.css defines one, e.g., .comment-form-container
-    <div className="form-container" style={{maxWidth: 'none', margin: '20px 0', padding: '15px'}}> 
+    <div className="form-container" style={{maxWidth: 'none', margin: '20px 0', padding: '15px'}}>
       <form onSubmit={handleSubmit}>
         {/* <h4>Leave a Comment</h4>  Styling for h4 is in App.css */}
         {error && <p className="form-error">{error}</p>}

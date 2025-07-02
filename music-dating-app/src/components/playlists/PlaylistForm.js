@@ -63,12 +63,12 @@ const PlaylistForm = () => {
 
   return (
     // Using form-container for consistent form styling
-    <div className="form-container"> 
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
         <h2>Share a YouTube Playlist</h2> {/* Default h2 styling from App.css */}
         {error && <p className="form-error">{error}</p>}
         {successMessage && <p className="form-success">{successMessage}</p>}
-        
+
         <div>
           <label htmlFor="playlistUrl">YouTube Playlist URL:</label>
           <input
@@ -80,7 +80,7 @@ const PlaylistForm = () => {
             placeholder="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID"
           />
         </div>
-        
+
         <div>
           <label htmlFor="title">Playlist Title (Optional):</label>
           <input
@@ -91,7 +91,7 @@ const PlaylistForm = () => {
             placeholder="My Awesome Mix"
           />
         </div>
-        
+
         <div>
           <label htmlFor="description">Description (Optional):</label>
           <textarea
@@ -102,9 +102,9 @@ const PlaylistForm = () => {
             rows="4" // Increased rows slightly
           />
         </div>
-        
+
         {/* Using btn class for consistent button styling */}
-        <button type="submit" className="btn">Share Playlist</button> 
+        <button type="submit" className="btn">Share Playlist</button>
       </form>
     </div>
   );

@@ -22,7 +22,7 @@ const PlaylistCard = ({ playlist }) => {
   return (
     <Link to={`/playlist/${id}`} className="playlist-card">
       <div> {/* Content part */}
-        <MusicIcon /> 
+        <MusicIcon />
         <h3 className="playlist-card-title">{title || 'Untitled Playlist'}</h3>
       </div>
       <div> {/* Footer part */}

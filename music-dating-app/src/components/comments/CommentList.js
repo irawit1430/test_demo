@@ -21,7 +21,7 @@ const CommentList = ({ playlistId }) => {
     const commentsQuery = query(
       collection(db, "comments"),
       where("playlistId", "==", playlistId),
-      orderBy("createdAt", "asc") 
+      orderBy("createdAt", "asc")
     );
 
     const unsubscribe = onSnapshot(commentsQuery, (querySnapshot) => {
@@ -57,7 +57,7 @@ const CommentList = ({ playlistId }) => {
   return (
     // No specific wrapper class needed unless more styling is desired for the list itself
     // The .comment class from App.css will style individual comments
-    <div> 
+    <div>
       {/* The "Comments" title is now h3 in SinglePlaylistPage with class comments-title */}
       {comments.map(comment => (
         <div key={comment.id} className="comment">

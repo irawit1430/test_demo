@@ -9,9 +9,9 @@ const HomePage = () => {
   // Logout button is in App.js navbar, so no need for handleLogout here.
 
   return (
-    <div className="page-container" style={{ textAlign: 'center' }}> 
+    <div className="page-container" style={{ textAlign: 'center' }}>
       <h1>Welcome to MusicVerse!</h1>
-      
+
       {currentUser ? (
         <div>
           <p style={{ fontSize: '1.2em', marginBottom: '20px' }}>
